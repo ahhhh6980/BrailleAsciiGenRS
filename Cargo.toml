@@ -1,0 +1,14 @@
+[package]
+name = "BrailleAsciiGenRS"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+image = "0.24.1"
+rand = "0.8.5"
+rayon = "1.5.2"
+rustdct = "0.7.0"
+rustfft = "6.0.1"
+transpose = "0.2.1"
