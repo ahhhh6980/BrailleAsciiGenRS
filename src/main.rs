@@ -143,7 +143,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut file = input_prompt("input", FindType::File, "Please choose a media")?;
     let mut img = image::open(file)?;
 
-    img = img.resize(256, 256, imageops::FilterType::Gaussian);
+    let size = prompt_number(0..2048, "Please pick a scale! (NxN):", 32)?;
+    img = img.resize(size as u32, size as u32, imageops::FilterType::Gaussian);
     let pixels = img.to_rgb8();
     let (w, h) = (img.width(), img.height());
 
